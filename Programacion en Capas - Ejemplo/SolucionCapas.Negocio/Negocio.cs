@@ -1,9 +1,7 @@
 ﻿using System;
-using SolucionCapas.Datos; // Lee a Datos
-
+using SolucionCapas.Datos; 
 namespace SolucionCapas.Negocio
 {
-    
     public class Persona
     {
         public string Dni { get; set; }
@@ -18,12 +16,10 @@ namespace SolucionCapas.Negocio
         {
             if (string.IsNullOrEmpty(dni)) return null;
 
-            // Pide los datos  a la capa de Datos
             var resultado = _datos.BuscarPorDni(dni);
 
             if (resultado == null) return null;
 
-            //  Transforma el dato pedido en un objeto Persona
             return new Persona
             {
                 Dni = resultado.Value.Dni,
